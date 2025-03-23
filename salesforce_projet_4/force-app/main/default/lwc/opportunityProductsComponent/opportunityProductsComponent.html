@@ -1,0 +1,41 @@
+<template>
+    <!-- Si des produits sont liés à l'opportunité -->
+    <template if:true={hasProducts}>
+        <lightning-card title="Produits de l'opportunité">
+            <p class="slds-p-horizontal_medium slds-p-vertical_small">
+                Produits détectés ✔️ (à afficher ici plus tard)
+            </p>
+        </lightning-card>
+    </template>
+
+    <!-- Si aucun produit n'est lié -->
+    <template if:false={hasProducts}>
+        <article class="slds-card slds-p-around_medium">
+            <div class="slds-media slds-media_center slds-has-flexi-truncate">
+                <!-- Icône standard produit -->
+                <div class="slds-media__figure">
+                    <lightning-icon 
+                        icon-name="standard:product"
+                        alternative-text="Produit"
+                        size="small"
+                        title="Produit">
+                    </lightning-icon>
+                </div>
+                <!-- Titre -->
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title slds-text-heading_small">
+                        Opportunité produits
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Texte d'information -->
+            <div class="slds-m-top_medium">
+                <p>Vous n'avez aucune ligne de produits pour le moment.</p>
+                <p>1. Veuillez tout d'abord sélectionner un Catalogue (Pricebook)</p>
+                <p>2. Sélectionnez ensuite les produits à ajouter.</p>
+            </div>
+        </article>
+    </template>
+</template>
+
